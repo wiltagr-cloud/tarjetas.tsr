@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de multiplicar</title>
+    <title>Tablas de multiplicar</title>
     <link rel="stylesheet" href="multiplicar.css">
     <script src="multiplicar.js" defer></script>
 </head>
@@ -14,28 +14,32 @@
 
         <header>
             <span class="etiqueta">✦ APRENDE A MULTIPLICAR</span>
-            <h1>Tabla del <span>3</span></h1>
+            <h1>Tablas de <span>multiplicar</span></h1>
             <p class="descripcion">
-                ¡Aprender matemáticas puede ser divertido!
+                Escribe un número y descubre su tabla.
             </p>
         </header>
 
-        <button class="boton" onclick="generarTablas()">
-            ▶ PROBAR
-        </button>
+        <section class="entrada">
+            <label for="numero">¿Qué tabla quieres aprender?</label>
 
-        <section class="tabla" aria-label="Tabla de multiplicar del 3">
-            <p>3 × 1 <strong>= 3</strong></p>
-            <p>3 × 2 <strong>= 6</strong></p>
-            <p>3 × 3 <strong>= 9</strong></p>
-            <p>3 × 4 <strong>= 12</strong></p>
-            <p>3 × 5 <strong>= 15</strong></p>
-            <p>3 × 6 <strong>= 18</strong></p>
-            <p>3 × 7 <strong>= 21</strong></p>
-            <p>3 × 8 <strong>= 24</strong></p>
-            <p>3 × 9 <strong>= 27</strong></p>
-            <p>3 × 10 <strong>= 30</strong></p>
+            <input
+                type="number"
+                id="numero"
+                min="0"
+                max="1000"
+                step="1"
+                placeholder="Ejemplo: 8"
+            >
+
+            <button class="boton" onclick="generarTablas()">
+                ▶ PROBAR
+            </button>
+
+            <p class="ayuda">Ingresa un número entero y pulsa PROBAR.</p>
         </section>
+
+        <section id="resultado" class="tabla" aria-live="polite"></section>
 
         <footer>
             <p>✦ Creado por: <strong>Tu Nickname</strong></p>

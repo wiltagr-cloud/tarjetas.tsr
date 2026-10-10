@@ -1,28 +1,44 @@
 
 function generarTablas() {
 
-    let contenedor = document.getElementById("contenedor");
+    // Obtener el número ingresado
+    let campoNumero = document.getElementById("numero");
+    let numero = campoNumero.value;
+    let resultado = document.getElementById("resultado");
 
-    let contenido = "";
+    // Validar el dato
+    if (numero.trim() === "") {
+        resultado.innerHTML =
+            '<p class="mensaje">Escribe un número para continuar.</p>';
+        campoNumero.focus();
+        return;
+    }
 
-    contenido += "<h1>Tabla del 3</h1>";
+    numero = Number(numero);
 
-    contenido += '<section class="tabla">';
+    if (!Number.isInteger(numero) ||
+        numero < 0 ||
+        numero > 1000) {
 
+        resultado.innerHTML =
+            '<p class="mensaje">Ingresa un número entero entre 0 y 1000.</p>';
+        campoNumero.focus();
+        return;
+    }
+
+    // Crear el título de la tabla
+    let contenido = "<h2>Tabla del " + numero + "</h2>";
+
+    // Construir la tabla dinámicamente
     for (let i = 1; i <= 10; i++) {
 
-        contenido += "<p>3 × " + i +
-                     " <strong>= " + (3 * i) +
-                     "</strong></p>";
+        contenido +=
+            "<p>" + numero + " × " + i +
+            " <strong>= " + (numero * i) +
+            "</strong></p>";
 
     }
 
-    contenido += "</section>";
-
-    contenido += '<button class="boton" onclick="generarTablas()">PROBAR</button>';
-
-    contenido += "<footer><p>Creado por: Tu Nickname</p></footer>";
-
-    contenedor.innerHTML = contenido;
-
+    // Mostrar el resultado
+    resultado.innerHTML = contenido;
 }
