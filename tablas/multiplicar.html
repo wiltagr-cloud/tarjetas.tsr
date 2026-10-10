@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla del 3 | Mi Proyecto</title>
+    <title>Tabla de multiplicar</title>
     <link rel="stylesheet" href="multiplicar.css">
+    <script src="multiplicar.js" defer></script>
 </head>
 <body>
 
-    <main class="contenedor">
+    <main class="contenedor" id="contenedor">
 
         <header>
             <span class="etiqueta">✦ APRENDE A MULTIPLICAR</span>
@@ -19,7 +20,9 @@
             </p>
         </header>
 
-        <button class="boton">▶ PROBAR</button>
+        <button class="boton" onclick="generarTablas()">
+            ▶ PROBAR
+        </button>
 
         <section class="tabla" aria-label="Tabla de multiplicar del 3">
             <p>3 × 1 <strong>= 3</strong></p>
@@ -36,7 +39,7 @@
 
         <footer>
             <p>✦ Creado por: <strong>Tu Nickname</strong></p>
-            <small>HTML + CSS | Mi primer proyecto web</small>
+            <small>HTML + CSS + JavaScript</small>
         </footer>
 
     </main>
