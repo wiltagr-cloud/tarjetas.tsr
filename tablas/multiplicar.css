@@ -1,0 +1,150 @@
+
+/* Configuración general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    padding: 30px 15px;
+    background: linear-gradient(135deg, #080b1c, #151b3d);
+    color: #ffffff;
+}
+
+/* Tarjeta principal */
+.contenedor {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 35px;
+    text-align: center;
+    background: rgba(21, 28, 59, 0.95);
+    border: 1px solid #303c70;
+    border-radius: 24px;
+    box-shadow: 0 0 30px rgba(0, 225, 255, 0.12);
+}
+
+/* Encabezado */
+.etiqueta {
+    display: inline-block;
+    color: #00e5ff;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(32px, 6vw, 48px);
+    margin-bottom: 12px;
+}
+
+h1 span {
+    color: #00e5ff;
+    text-shadow: 0 0 18px rgba(0, 229, 255, 0.6);
+}
+
+.descripcion {
+    color: #b8c4e8;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* Botón decorativo */
+.boton {
+    padding: 13px 30px;
+    margin-bottom: 30px;
+    color: #080b1c;
+    background: #00e5ff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: default;
+    box-shadow: 0 0 18px rgba(0, 229, 255, 0.25);
+}
+
+/* Tabla de multiplicar */
+.tabla {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.tabla p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    background: #20294f;
+    border: 1px solid #354474;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 17px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.tabla p:hover {
+    transform: translateY(-3px);
+    border-color: #00e5ff;
+}
+
+.tabla strong {
+    color: #00e5ff;
+    font-size: 20px;
+}
+
+/* Pie de página */
+footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #303c70;
+    color: #b8c4e8;
+    line-height: 1.8;
+}
+
+footer strong {
+    color: #00e5ff;
+}
+
+footer small {
+    font-size: 12px;
+}
+
+/* Diseño para celulares */
+@media (max-width: 480px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .contenedor {
+        padding: 25px 15px;
+        border-radius: 18px;
+    }
+
+    .etiqueta {
+        letter-spacing: 1px;
+    }
+
+    .tabla {
+        grid-template-columns: 1fr;
+    }
+
+    .tabla p {
+        padding: 14px;
+    }
+}
+
+/* Respeta la preferencia de movimiento del usuario */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
